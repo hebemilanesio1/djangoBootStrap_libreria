@@ -3,18 +3,16 @@
 {% block titulo %}Inicio{% endblock %}
 
 {% block contenido %}
-
-<div class="p-5 bg-light">
-    <div class="container">
-        <h1 class="display-3">Bienvenidos al sitio de la librería</h1>
-        <p class="lead">Empezar a ingresar libros</p>
-        <hr class="my-2" />
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'libros' %}" role="button">Empezar</a>
-
-        </p>
-    </div>
+<br/>
+<br/>
+<div class="content-container text-center">
+    <h1 class="display-3">Autogestión de la UTN FRVM</h1>
+    <p class="lead">Gestión de Inscripción de Cursos de Oficio</p>
+    <hr class="my-2" />
+    <p class="lead">
+        <br/>
+        <a class="btn btn-lg" href="{% url 'libros' %}" role="button" style="background-color: orange; color: black; border: none; padding: 0.5rem 1rem; font-size: 1.25rem;">Empezar</a>
+    </p>
 </div>
-
-
 {% endblock %}
+

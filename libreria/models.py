@@ -15,3 +15,10 @@ class Libro(models.Model):
     def delete(self, using=None, keep_parents=False):
         self.imagen.storage.delete(self.imagen.name)
         super().delete(using, keep_parents)
+
+class Institucional(models.Model):
+    titulo = models.CharField(max_length=255)
+    pdf = models.FileField(upload_to='pdfs/')
+
+    def __str__(self):
+        return self.titulo

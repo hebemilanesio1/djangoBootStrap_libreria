@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Libro
+from .models import Libro, Institucional
 from .forms import LibroForm
 
 # Create your views here.
@@ -9,9 +9,9 @@ def inicio(request):
     #Imprime un texto html
     return render(request, 'paginas/inicio.html')
 
-def nosotros(request):
+def institucional(request):
     #Busca un archivo nosotros.html donde accede directamente en templates
-    return render(request, 'paginas/nosotros.html')
+    return render(request, 'paginas/institucional.html')
 
 def libros(request):
     libros = Libro.objects.all()
@@ -37,3 +37,7 @@ def eliminar(request,id):
     libro = Libro.objects.get(id=id)
     libro.delete()
     return redirect('libros')
+
+def institucional_view(request):
+    apartados = Institucional.objects.all()
+    return render(request, 'institucional.html', {'apartados': apartados})

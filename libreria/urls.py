@@ -6,10 +6,13 @@ from django.contrib.staticfiles.urls import static
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
-    path('nosotros',views.nosotros, name='nosotros'),
+    path('institucional/',views.institucional, name='institucional'),
     path('libros', views.libros, name='libros'),
     path('libros/crear', views.crear, name='crear'),
     path('libros/editar', views.editar, name='editar'),
     path('eliminar/<int:id>', views.eliminar, name='eliminar'),
     path('libros/editar/<int:id>', views.editar, name='editar')
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
